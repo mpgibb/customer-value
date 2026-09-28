@@ -1,0 +1,18 @@
+{
+  "seed": 202609282,
+  "cohorts": 48,
+  "customers_per_cohort": 180,
+  "horizon_months": 12,
+  "train_cohorts": 24,
+  "validation_end": 30,
+  "test_start": 36,
+  "annual_discount_rate": 0.1,
+  "treatment_cost": 35.0,
+  "budget_fraction": 0.2,
+  "bootstrap_draws": 1000,
+  "scenarios": [
+    "stable",
+    "no_effect",
+    "response_shift"
+  ]
+}
