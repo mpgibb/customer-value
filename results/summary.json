@@ -1,0 +1,469 @@
+{
+  "study": "customer-value",
+  "config": {
+    "seed": 202609282,
+    "cohorts": 54,
+    "customers_per_cohort": 180,
+    "horizon_months": 12,
+    "train_cohorts": 24,
+    "validation_end": 30,
+    "test_start": 42,
+    "annual_discount_rate": 0.1,
+    "treatment_cost": 35.0,
+    "budget_fraction": 0.2,
+    "scenarios": [
+      "stable",
+      "no_effect",
+      "response_shift"
+    ]
+  },
+  "scenarios": [
+    {
+      "scenario": "stable",
+      "customers": 9720,
+      "test_customers": 2160,
+      "test_controls": 1051,
+      "cohort_clusters": 12,
+      "prediction": {
+        "segment_mean": {
+          "brier": 0.183619,
+          "log_loss": 0.553469,
+          "value_mae": 183.540607,
+          "value_bias": 3.458452,
+          "calibration": [
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "n": 1051,
+              "predicted": 0.246373,
+              "observed": 0.243578
+            }
+          ]
+        },
+        "survival": {
+          "brier": 0.159302,
+          "log_loss": 0.488675,
+          "value_mae": 149.241613,
+          "value_bias": -13.955391,
+          "calibration": [
+            {
+              "lower": 0.0,
+              "upper": 0.2,
+              "n": 487,
+              "predicted": 0.117195,
+              "observed": 0.117043
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "n": 382,
+              "predicted": 0.282689,
+              "observed": 0.282723
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.6,
+              "n": 152,
+              "predicted": 0.474692,
+              "observed": 0.440789
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "n": 28,
+              "predicted": 0.703471,
+              "observed": 0.821429
+            },
+            {
+              "lower": 0.8,
+              "upper": 1.0,
+              "n": 2,
+              "predicted": 0.826114,
+              "observed": 0.5
+            }
+          ]
+        }
+      },
+      "validation": {
+        "customers": 536,
+        "brier": 0.155,
+        "value_mae": 143.049174
+      },
+      "policies": {
+        "none": {
+          "target_rate": 0.0,
+          "incremental_net_per_customer": 0.0,
+          "lower95": 0.0,
+          "upper95": 0.0,
+          "oracle_expected_net": 0.0,
+          "regret_to_budget_oracle": 2.349027,
+          "accounting_cost_sensitivity": {
+            "15": 0.0,
+            "35": 0.0,
+            "55": 0.0
+          }
+        },
+        "all": {
+          "target_rate": 1.0,
+          "incremental_net_per_customer": -27.365495,
+          "lower95": -46.202067,
+          "upper95": -8.528924,
+          "oracle_expected_net": -25.956721,
+          "regret_to_budget_oracle": null,
+          "accounting_cost_sensitivity": {
+            "15": -7.365495,
+            "35": -27.365495,
+            "55": -47.365495
+          }
+        },
+        "high_risk": {
+          "target_rate": 0.2,
+          "incremental_net_per_customer": -19.562741,
+          "lower95": -28.053871,
+          "upper95": -11.071611,
+          "oracle_expected_net": -14.510377,
+          "regret_to_budget_oracle": 16.859404,
+          "accounting_cost_sensitivity": {
+            "15": -15.562741,
+            "35": -19.562741,
+            "55": -23.562741
+          }
+        },
+        "high_value": {
+          "target_rate": 0.2,
+          "incremental_net_per_customer": -0.124522,
+          "lower95": -8.338957,
+          "upper95": 8.089913,
+          "oracle_expected_net": 1.19668,
+          "regret_to_budget_oracle": 1.152347,
+          "accounting_cost_sensitivity": {
+            "15": 3.875478,
+            "35": -0.124522,
+            "55": -4.124522
+          }
+        },
+        "incremental_value": {
+          "target_rate": 0.198611,
+          "incremental_net_per_customer": -0.038771,
+          "lower95": -7.059405,
+          "upper95": 6.981862,
+          "oracle_expected_net": 1.043973,
+          "regret_to_budget_oracle": 1.305054,
+          "accounting_cost_sensitivity": {
+            "15": 3.933451,
+            "35": -0.038771,
+            "55": -4.010994
+          }
+        }
+      },
+      "budget_oracle_net": 2.349027
+    },
+    {
+      "scenario": "no_effect",
+      "customers": 9720,
+      "test_customers": 2160,
+      "test_controls": 1051,
+      "cohort_clusters": 12,
+      "prediction": {
+        "segment_mean": {
+          "brier": 0.183619,
+          "log_loss": 0.553469,
+          "value_mae": 183.540607,
+          "value_bias": 3.458452,
+          "calibration": [
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "n": 1051,
+              "predicted": 0.246373,
+              "observed": 0.243578
+            }
+          ]
+        },
+        "survival": {
+          "brier": 0.159302,
+          "log_loss": 0.488675,
+          "value_mae": 149.241613,
+          "value_bias": -13.955391,
+          "calibration": [
+            {
+              "lower": 0.0,
+              "upper": 0.2,
+              "n": 487,
+              "predicted": 0.117195,
+              "observed": 0.117043
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "n": 382,
+              "predicted": 0.282689,
+              "observed": 0.282723
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.6,
+              "n": 152,
+              "predicted": 0.474692,
+              "observed": 0.440789
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "n": 28,
+              "predicted": 0.703471,
+              "observed": 0.821429
+            },
+            {
+              "lower": 0.8,
+              "upper": 1.0,
+              "n": 2,
+              "predicted": 0.826114,
+              "observed": 0.5
+            }
+          ]
+        }
+      },
+      "validation": {
+        "customers": 536,
+        "brier": 0.155,
+        "value_mae": 143.049174
+      },
+      "policies": {
+        "none": {
+          "target_rate": 0.0,
+          "incremental_net_per_customer": 0.0,
+          "lower95": 0.0,
+          "upper95": 0.0,
+          "oracle_expected_net": 0.0,
+          "regret_to_budget_oracle": 0.0,
+          "accounting_cost_sensitivity": {
+            "15": 0.0,
+            "35": 0.0,
+            "55": 0.0
+          }
+        },
+        "all": {
+          "target_rate": 1.0,
+          "incremental_net_per_customer": -37.732647,
+          "lower95": -56.693371,
+          "upper95": -18.771922,
+          "oracle_expected_net": -35.0,
+          "regret_to_budget_oracle": null,
+          "accounting_cost_sensitivity": {
+            "15": -17.732647,
+            "35": -37.732647,
+            "55": -57.732647
+          }
+        },
+        "high_risk": {
+          "target_rate": 0.2,
+          "incremental_net_per_customer": -13.444053,
+          "lower95": -21.622851,
+          "upper95": -5.265255,
+          "oracle_expected_net": -7.0,
+          "regret_to_budget_oracle": 7.0,
+          "accounting_cost_sensitivity": {
+            "15": -9.444053,
+            "35": -13.444053,
+            "55": -17.444053
+          }
+        },
+        "high_value": {
+          "target_rate": 0.2,
+          "incremental_net_per_customer": -6.788092,
+          "lower95": -15.444862,
+          "upper95": 1.868678,
+          "oracle_expected_net": -7.0,
+          "regret_to_budget_oracle": 7.0,
+          "accounting_cost_sensitivity": {
+            "15": -2.788092,
+            "35": -6.788092,
+            "55": -10.788092
+          }
+        },
+        "incremental_value": {
+          "target_rate": 0.007407,
+          "incremental_net_per_customer": -0.688479,
+          "lower95": -1.699336,
+          "upper95": 0.322378,
+          "oracle_expected_net": -0.259259,
+          "regret_to_budget_oracle": 0.259259,
+          "accounting_cost_sensitivity": {
+            "15": -0.540331,
+            "35": -0.688479,
+            "55": -0.836627
+          }
+        }
+      },
+      "budget_oracle_net": 0.0
+    },
+    {
+      "scenario": "response_shift",
+      "customers": 9720,
+      "test_customers": 2160,
+      "test_controls": 1051,
+      "cohort_clusters": 12,
+      "prediction": {
+        "segment_mean": {
+          "brier": 0.183619,
+          "log_loss": 0.553469,
+          "value_mae": 183.540607,
+          "value_bias": 3.458452,
+          "calibration": [
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "n": 1051,
+              "predicted": 0.246373,
+              "observed": 0.243578
+            }
+          ]
+        },
+        "survival": {
+          "brier": 0.159302,
+          "log_loss": 0.488675,
+          "value_mae": 149.241613,
+          "value_bias": -13.955391,
+          "calibration": [
+            {
+              "lower": 0.0,
+              "upper": 0.2,
+              "n": 487,
+              "predicted": 0.117195,
+              "observed": 0.117043
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "n": 382,
+              "predicted": 0.282689,
+              "observed": 0.282723
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.6,
+              "n": 152,
+              "predicted": 0.474692,
+              "observed": 0.440789
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "n": 28,
+              "predicted": 0.703471,
+              "observed": 0.821429
+            },
+            {
+              "lower": 0.8,
+              "upper": 1.0,
+              "n": 2,
+              "predicted": 0.826114,
+              "observed": 0.5
+            }
+          ]
+        }
+      },
+      "validation": {
+        "customers": 536,
+        "brier": 0.155,
+        "value_mae": 143.049174
+      },
+      "policies": {
+        "none": {
+          "target_rate": 0.0,
+          "incremental_net_per_customer": 0.0,
+          "lower95": 0.0,
+          "upper95": 0.0,
+          "oracle_expected_net": 0.0,
+          "regret_to_budget_oracle": 8.939261,
+          "accounting_cost_sensitivity": {
+            "15": 0.0,
+            "35": 0.0,
+            "55": 0.0
+          }
+        },
+        "all": {
+          "target_rate": 1.0,
+          "incremental_net_per_customer": -82.159279,
+          "lower95": -102.871068,
+          "upper95": -61.447489,
+          "oracle_expected_net": -78.350443,
+          "regret_to_budget_oracle": null,
+          "accounting_cost_sensitivity": {
+            "15": -62.159279,
+            "35": -82.159279,
+            "55": -102.159279
+          }
+        },
+        "high_risk": {
+          "target_rate": 0.2,
+          "incremental_net_per_customer": 3.629298,
+          "lower95": -4.400972,
+          "upper95": 11.659568,
+          "oracle_expected_net": 6.686889,
+          "regret_to_budget_oracle": 2.252372,
+          "accounting_cost_sensitivity": {
+            "15": 7.629298,
+            "35": 3.629298,
+            "55": -0.370702
+          }
+        },
+        "high_value": {
+          "target_rate": 0.2,
+          "incremental_net_per_customer": -40.109881,
+          "lower95": -50.215618,
+          "upper95": -30.004143,
+          "oracle_expected_net": -37.078609,
+          "regret_to_budget_oracle": 46.017871,
+          "accounting_cost_sensitivity": {
+            "15": -36.109881,
+            "35": -40.109881,
+            "55": -44.109881
+          }
+        },
+        "incremental_value": {
+          "target_rate": 0.198611,
+          "incremental_net_per_customer": -38.265191,
+          "lower95": -45.15576,
+          "upper95": -31.374622,
+          "oracle_expected_net": -35.273898,
+          "regret_to_budget_oracle": 44.213159,
+          "accounting_cost_sensitivity": {
+            "15": -34.292968,
+            "35": -38.265191,
+            "55": -42.237413
+          }
+        }
+      },
+      "budget_oracle_net": 8.939261
+    }
+  ],
+  "synthetic": true,
+  "python": "3.11.16",
+  "numpy": "2.2.6",
+  "scipy": "1.17.1",
+  "source_hashes": {
+    "PROTOCOL.md": "329785d6a763512600f5285066dd0b71cb4b165bd48ce288d8a1013dd5bb852a",
+    "common.py": "72d64b6ef309183fc7dab7469f554baac697b330da597cb5b72dd6a154b00377",
+    "config.json": "1c84ab5245f20388d83f947b0cc6851efe9680999dd035bd58221a5c8bfc0e1a",
+    "pyproject.toml": "9798c92549ab34db24973eda99d758587c9c9663797526874b9048621392b48d",
+    "study.py": "134d4fe712e50386220c9e2a88e1ca7b8d126e3cea7139fe9960288d947a3962",
+    "tests/test_study.py": "3ce7ed4b251523e9fb0b9c9de8eeaba91ebc141a1bcef0a80484a34684b6517a",
+    "uv.lock": "db8b30ffeb352dc45de32d62bbdaf150de45c0309fb6dcb87f370d6a6cf58f7f"
+  },
+  "data_hashes": {
+    "data/no_effect_customers.csv": "7487c34d56cb6cc351025cbd64b09da8116e2d71e5d2927a289ff85767446041",
+    "data/no_effect_monthly.csv": "3e428780a9a904620de37b9edca4625c01847ad6d31dc1257ae9d0cced8a5b44",
+    "data/no_effect_oracle.csv": "43fcf1f4cfa40abb7e74fcdd513b02da014d08f9d3afe827925de5f30f5becdb",
+    "data/response_shift_customers.csv": "92b5be4d9e82cab555fc467d89d432e39d6740ba93901e2c38fcfccba236f174",
+    "data/response_shift_monthly.csv": "abe7fb1b432e83db1856382abb18ca10b7f6d077bd0d85d426a904f26881d09d",
+    "data/response_shift_oracle.csv": "0b7153f984780b042a606da9e785763c7116be84513f34d3b9ff55674544312e",
+    "data/stable_customers.csv": "9dfc21f40685d688c7b3ca7bc1da30dc6271cedfa15a21569bbd9338317c21d5",
+    "data/stable_monthly.csv": "e23ba37d43cb32f79f3c18111284a57669cc0a9ab92204f183b3235f4923b291",
+    "data/stable_oracle.csv": "dd13a9e709cbc148e5efabaaf4bf1c4256335a2d7bea2a981d1dd4081060b588",
+    "results/no_effect_scored_customers.csv": "dee2bb3bad26e16a6a4da5f69fc729c7873b12478ff58ae007964c932bdf090a",
+    "results/response_shift_scored_customers.csv": "a171b0badc36877b52311dc52004d364dee9167c3dc6e1f2a0d5afce33de0ceb",
+    "results/stable_scored_customers.csv": "fccc01d3d2bbf2902fd23d526fda5ea22b0f1b20de754f987e46b1e3905ed57d"
+  }
+}

@@ -9,7 +9,6 @@
   "annual_discount_rate": 0.1,
   "treatment_cost": 35.0,
   "budget_fraction": 0.2,
-  "bootstrap_draws": 1000,
   "scenarios": [
     "stable",
     "no_effect",
